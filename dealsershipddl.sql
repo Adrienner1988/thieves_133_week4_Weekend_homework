@@ -17,6 +17,7 @@ DROP COLUMN price;
 SELECT*
 FROM car;
 
+
 -- Staff--
 CREATE TABLE staff(
     staff_id SERIAL PRIMARY KEY,
@@ -57,6 +58,9 @@ CREATE TABLE customer(
     home_address VARCHAR NOT NULL
 );
 
+ALTER TABLE customer
+DROP COLUMN car_id;
+
 SELECT *
 FROM customer;
 
@@ -74,6 +78,18 @@ CREATE TABLE invoice(
     total VARCHAR
 );
 
-
 SELECT *
 FROM invoice;
+
+-- Ticket Staff--
+
+CREATE TABLE ticket_staff(
+    ticket_staff_id SERIAL PRIMARY KEY,
+    ticket_id INTEGER,
+    FOREIGN KEY (ticket_id) REFERENCES service_ticket(ticket_id),
+    staff_id INTEGER,
+    FOREIGN KEY (staff_id) REFERENCES staff(staff_id)
+);
+
+SELECT*
+FROM ticket_staff;

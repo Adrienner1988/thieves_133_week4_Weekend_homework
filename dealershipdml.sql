@@ -140,3 +140,22 @@ INSERT INTO invoice(
     '$50.00',
     '10/2/2023'
 );
+
+-- Ticket Staff --
+
+INSERT INTO ticket_staff(
+    ticket_id,
+    staff_id
+) VALUES (
+    1,
+    4
+), (
+    2,
+    3
+), (
+    3,
+    2
+), (
+    4,
+    1
+);
